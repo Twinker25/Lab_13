@@ -16,14 +16,14 @@ namespace Lab_13
                     case 1:
                         List<House<Apartment>> houses = new List<House<Apartment>>();
                         Random random = new Random();
-                        int CountHouse = random.Next(1, 4);
-                        for (int i = 0; i < CountHouse; i++)
+                        int NumberHouse = random.Next(1, 4);
+                        for (int i = 0; i < NumberHouse; i++)
                         {
                             House<Apartment> house = new House<Apartment>();
 
-                            int CountApartments = random.Next(1, 4);
+                            int NumberApartments = random.Next(1, 4);
 
-                            for (int j = 0; j < CountApartments; j++)
+                            for (int j = 0; j < NumberApartments; j++)
                             {
                                 int number = random.Next(1, 6);
                                 house.Apartments.Add(new Apartment { Number = number });
@@ -44,8 +44,8 @@ namespace Lab_13
                     case 2:
                         Garage<Car> garage = new Garage<Car>();
                         Random r = new Random();
-                        int numberOfCars = r.Next(1, 4);
-                        for (int i = 0; i < numberOfCars; i++)
+                        int NumberCars = r.Next(1, 4);
+                        for (int i = 0; i < NumberCars; i++)
                         {
                             Console.Write("\nEnter car vendor: ");
                             string vendor = Console.ReadLine();
@@ -65,7 +65,15 @@ namespace Lab_13
                         }
                         break;
                     case 3:
-                        
+                        Alphabet<char> alphabet = new Alphabet<char>();
+                        for (char letter = 'A'; letter <= 'Z'; letter++)
+                        {
+                            alphabet.AddLetter(letter);
+                        }
+                        foreach (char letter in alphabet.GetLetters())
+                        {
+                            Console.WriteLine(letter);
+                        }
                         break;
                     default:
                         Console.WriteLine("Error!");
